@@ -10,7 +10,7 @@ import threading
 from six.moves import queue, range
 
 from thriftpy2.thrift import TClient, TException
-from thriftpy2.transport import TBufferedTransport, TFramedTransport, TSocket, TTransportBase, TTransportException, readall
+from thriftpy2.transport import TBufferedTransport, TFramedTransport, TSocket, TTransportBase, TTransportException
 from thriftpy2.protocol import TBinaryProtocol, TCompactProtocol
 
 import puresasl
