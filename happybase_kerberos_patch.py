@@ -115,10 +115,10 @@ class TSaslClientTransport(TTransportBase):
         self.transport.flush()
 
     def recv_sasl_msg(self):
-        header = readall(self.transport.read, 5)
+        header = self.transport.readall(self.transport.read, 5)
         status, length = unpack(">BI", header)
         if length > 0:
-            payload = readall(self.transport.read, length)
+            payload = self.transport.readall(self.transport.read, length)
         else:
             payload = ""
         return status, payload
@@ -149,9 +149,9 @@ class TSaslClientTransport(TTransportBase):
         return self.__rbuf.read(sz)
 
     def _read_frame(self):
-        header = readall(self.transport.read, 4)
+        header = self.transport.readall(self.transport.read, 4)
         length, = unpack('!i', header)
-        encoded = readall(self.transport.read, length)
+        encoded = self.transport.readall(self.transport.read, length)
         self.__rbuf = BytesIO(self.sasl.unwrap(encoded))
 
     def close(self):
