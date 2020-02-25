@@ -33,11 +33,12 @@ For example, in ubuntu install by the follow commands:
 sudo apt-get install python-dev
 sudo apt-get install python3-dev
 sudo apt-get install libkrb5-dev
+sudo apt-get install krb5-kdc
 ```
 
 # Installment
 
-`pip install -U git+https://github.com/normal-cock/happybase-kerberos-patch.git`
+`pip install -U git+https://github.com/Franck851/happybase-kerberos-patch.git@0.1.5`
 
 # Usage
 
